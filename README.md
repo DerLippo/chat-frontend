@@ -1,16 +1,21 @@
-
 # Chat-Anwendung (Frontend)
 
 Dies ist das Frontend der Chat-Anwendung, das mit React entwickelt wurde und die Benutzeroberfläche für Echtzeit-Kommunikation bereitstellt.
 
 ## Aktuelle Version
 
-**Version:** `1.0.0` (Release)
+**Version:** `1.0.1` (Release)
 
 ---
 
 ## Changelog
+
+### 1.0.1
+
+- Visuelle Optimierung: Passwort-Wiederherstellungslink ausgeblendet, da die Funktion noch nicht verfügbar ist.
+
 ### 1.0.0
+
 - Initialer Release mit den grundlegenden Funktionen:
   - Registrierung und Login
   - Echtzeit-Chat
@@ -38,17 +43,20 @@ Dies ist das Frontend der Chat-Anwendung, das mit React entwickelt wurde und die
 ### Schritte
 
 1. **Repository klonen**:
+
    ```bash
    git clone https://github.com/derlippo/chat-frontend.git
    cd chat-frontend
    ```
 
 2. **Abhängigkeiten installieren**:
+
    ```bash
    npm install
    ```
 
 3. **Entwicklungsserver starten**:
+
    ```bash
    npm start
    ```
@@ -59,6 +67,7 @@ Dies ist das Frontend der Chat-Anwendung, das mit React entwickelt wurde und die
    ```
 
 ### Verwendete Technologien
+
 - **React**: Entwicklung der Benutzeroberfläche und modularer Komponenten.
 - **React Router**: Navigation und Routing zwischen verschiedenen Seiten.
 - **Socket.IO Client**: Echtzeit-Kommunikation mit dem Backend.
@@ -73,9 +82,16 @@ Dies ist das Frontend der Chat-Anwendung, das mit React entwickelt wurde und die
 - **Webpack** (indirekt durch React Scripts): Bundling und Optimierung der Anwendung.
 
 ### Umgebungsvariablen
+
 Erstelle eine `.env`-Datei im Stammverzeichnis und füge die folgenden Variablen hinzu:
+
 ```env
+# API-URL für die Produktionsumgebung
 REACT_APP_API_URL=http://localhost:3001
+
+# API-URL für die Entwicklungsumgebung
 REACT_APP_API_URL_DEV=http://localhost:3001
+
+# Umgebung (development oder production)
 NODE_ENV=production
 ```
