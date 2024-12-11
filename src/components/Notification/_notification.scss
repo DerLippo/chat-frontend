@@ -1,0 +1,14 @@
+.notification {
+  font-size: 2rem;
+  background-color: var(--color-primary-light);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  color: var(--color-grey-light-1);
+
+  &--error {
+    background-color: red;
+  }
+  &--success {
+    background-color: green;
+  }
+}

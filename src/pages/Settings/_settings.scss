@@ -1,0 +1,51 @@
+.settings {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--color-grey-dark-1);
+
+  padding: 3em;
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--color-grey-light-1);
+    border-right: none;
+    background-color: var(--color-primary);
+  }
+  &__menu-item {
+    border-top: 1px solid var(--color-grey-light-1);
+    border-bottom: 1px solid var(--color-grey-light-1);
+
+    color: var(--color-grey-light-1);
+    font-size: 1em;
+    padding: 0.25em;
+    cursor: pointer;
+
+    &:first-child {
+      border-top: 0;
+    }
+    // Aktuell nicht nötig
+    // &:last-child {
+    //   border-bottom: 0;
+    // }
+
+    &:hover {
+      background-color: var(--color-primary-light);
+    }
+  }
+  &__content {
+    background-color: var(--color-primary);
+    color: var(--color-grey-light-1);
+    font-size: 0.75em;
+    border: 1px solid var(--color-grey-light-1);
+    padding: 0.5em;
+    flex: 1;
+
+    &--hidden {
+      display: none;
+    }
+  }
+}

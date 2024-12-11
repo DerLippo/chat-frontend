@@ -1,0 +1,31 @@
+input {
+  cursor: text;
+  background-color: var(--color-grey-light-1);
+  border: 2px solid var(--color-secondary-light);
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-grey-dark-1);
+  outline: none;
+  transition: 0.25s;
+
+  &::placeholder {
+    color: var(--color-grey-dark-1);
+  }
+
+  &:hover,
+  &:focus {
+    background-color: var(--color-secondary-light);
+    border-color: var(--color-secondary);
+    color: var(--color-grey-dark-1);
+
+    &::placeholder {
+      color: var(--color-grey-dark-1);
+    }
+  }
+}
+
+input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

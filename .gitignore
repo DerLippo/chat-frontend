@@ -1,0 +1,58 @@
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Environment files
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+# Debug files
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Testing
+coverage/
+jest/
+
+# Service workers
+service-worker.js
+workbox-*.js
+
+# React-specific
+public/static/
+*.chunk.js
+*.chunk.js.map
+*.css.map
+*.html.map
+
+# Temporary files
+*.temp
+*.cache
+
+# Other generated files
+*.lock
+*.bak
+*.old

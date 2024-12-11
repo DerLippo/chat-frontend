@@ -1,0 +1,106 @@
+@use './components/Header/_header.scss';
+@use './components/Button/_button.scss';
+@use './components/Input/_input.scss';
+@use './components/CreateRoom/_createRoom.scss';
+@use './components/Notification/_notification.scss';
+@use './pages/Chat/_chat.scss';
+@use './pages/Settings/_settings.scss';
+@use './pages/Login/_login.scss';
+@use './pages/Register/_register.scss';
+@use './pages/Logout/_logout.scss';
+// @use '~nprogress/nprogress';
+
+// Color Variables
+:root {
+  /* Primary (Dunkelblau) */
+  --color-primary: #2c3e50;
+  --color-primary-light: #34495e;
+  --color-primary-dark: #22313f;
+
+  /* Secondary (Mintgrün) */
+  --color-secondary: #1abc9c;
+  --color-secondary-light: #48c9b0;
+  --color-secondary-dark: #16a085;
+
+  /* Tertiary (Pfirsich-Orange) */
+  --color-tertiary: #e67e22;
+  --color-tertiary-light: #f39c12;
+  --color-tertiary-dark: #d35400;
+
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+
+  --color-grey-dark-1: #222222;
+  --color-grey-dark-2: #4f4f4f;
+  --color-grey-dark-3: #868686;
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+
+  --line: 1px solid var(--color-grey-light-2);
+
+  // Responsive Breakpoints
+  --bp-largest: 75em; // 1200px
+  --bp-large: 62.5em; // 1000px
+  --bp-medium: 50em; // 800px;
+  --bp-small: 37.5em; // 600px;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px 10/16 = 62.5
+}
+
+body {
+  min-height: 100vh;
+  box-sizing: border-box;
+  line-height: 1.7;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: calc(1rem + 2vmin);
+  font-weight: 400;
+  color: var(--color-grey-dark-1);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.dp-none {
+  display: none !important;
+}
+.hidden {
+  cursor: default !important;
+  opacity: 0 !important;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}

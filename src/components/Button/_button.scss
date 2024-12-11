@@ -1,0 +1,21 @@
+button {
+  cursor: pointer;
+  color: var(--color-grey-dark-1);
+  background-color: var(--color-tertiary);
+  border: 2px solid var(--color-tertiary-light);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.25s;
+
+  &:hover {
+    background-color: var(--color-tertiary-light);
+    border-color: var(--color-tertiary);
+    color: var(--color-grey-light-1);
+  }
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
