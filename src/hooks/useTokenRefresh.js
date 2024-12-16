@@ -18,9 +18,8 @@ export const useTokenRefresh = () => {
         );
         const loggedIn = !!Cookies.get('loggedIn');
         if (!response.ok && loggedIn) {
-          Cookies.remove('loggedIn');
-          window.location.href = '/login';
-          throw new Error('Token-Erneuerung fehlgeschlagen');
+          const error = await response.json();
+          throw new Error(error.message || 'Token-Erneuerung fehlgeschlagen');
         }
       } catch (err) {
         console.error('Token konnte nicht erneuert werden:', err);
@@ -30,7 +29,7 @@ export const useTokenRefresh = () => {
     // Intervall zur Token-Erneuerung
     const interval = setInterval(() => {
       refreshAuthToken();
-    }, 29 * 60 * 1000); // Token kurz vor Ablauf erneuern (alle 29 Minuten)
+    }, 30 * 60 * 1000); // Token regelmäßig erneuern (alle 30 Minuten)
 
     return () => clearInterval(interval); // Cleanup
   }, []);

@@ -21,15 +21,15 @@ function App() {
   // Überwache Änderungen am "loggedIn"-Cookie und "userName"-Cookie
   useEffect(() => {
     const interval = setInterval(() => {
-      const isLoggedIn = !!Cookies.get('loggedIn');
-      const isUserName = Cookies.get('userName');
+      const isLoggedInCookie = !!Cookies.get('loggedIn');
+      const isUserNameCookie = Cookies.get('userName');
 
-      if (isLoggedIn !== loggedIn) {
-        setLoggedIn(isLoggedIn);
+      if (isLoggedInCookie !== loggedIn) {
+        setLoggedIn(isLoggedInCookie);
       }
 
-      if (!isUserName !== userName) {
-        setUserName(isUserName);
+      if (!isUserNameCookie !== userName) {
+        setUserName(isUserNameCookie);
       }
     }, 6000);
 

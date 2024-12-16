@@ -40,7 +40,10 @@ const Register = () => {
         }
       );
 
-      if (!response.ok) throw new Error(`Es trat ein Fehler auf.`);
+      const data = await response.json();
+
+      if (!response.ok)
+        throw new Error(data.error || 'Registrierung fehlgeschlagen.');
 
       setNotification({
         type: 'success',
@@ -51,6 +54,7 @@ const Register = () => {
       setPassword('');
       navigate('/login');
     } catch (err) {
+      console.log(err);
       setNotification({
         type: 'error',
         message: `Es trat ein Fehler auf: ${err.message}`,

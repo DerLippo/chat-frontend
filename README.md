@@ -4,11 +4,31 @@ Dies ist das Frontend der Chat-Anwendung, das mit React entwickelt wurde und die
 
 ## Aktuelle Version
 
-**Version:** `1.0.1` (Release)
+**Version:** `1.1.0`
 
 ---
 
 ## Changelog
+
+### 1.1.0
+
+- **Title-Update**:
+  - Der Titel der Webseite wurde von **React App** auf einen passenderen Namen geändert.
+- **Bugfix - Registrierung**:
+  - Verbesserte Fehlerbehandlung und Anzeige spezifischer Fehlermeldungen, z. B. wenn der Benutzername oder die E-Mail bereits verwendet wird.
+- **Styling-Optimierungen**:
+  - Der Stil der Login- und Registrierungs-Buttons wurde überarbeitet.
+  - Schriftgröße im Chat angepasst.
+  - Textarea kann jetzt nur noch vertikal (y-Achse) in der Größe verändert werden.
+- **Feature-Anpassungen**:
+  - Emoji-Button im Chat ausgeblendet, da er derzeit noch nicht funktionsfähig ist.
+  - Settings-Button im Chat ausgeblendet.
+- **Code-Optimierungen**:
+  - Unnötige `console.log`-Ausgaben entfernt bzw. angepasst.
+  - `reconnectionDelay` für die Socket-Verbindung angepasst, um Verbindungsabbrüche besser zu handhaben.
+  - Intervall für den Refresh des Tokens optimiert.
+- **Favicon aktualisiert**:
+  - Ein passenderes Favicon wurde hinzugefügt.
 
 ### 1.0.1
 
@@ -16,7 +36,7 @@ Dies ist das Frontend der Chat-Anwendung, das mit React entwickelt wurde und die
 
 ### 1.0.0
 
-- Initialer Release mit den grundlegenden Funktionen:
+- **Initialer Release mit den grundlegenden Funktionen**:
   - Registrierung und Login
   - Echtzeit-Chat
   - Raum-Management
@@ -87,7 +107,7 @@ Erstelle eine `.env`-Datei im Stammverzeichnis und füge die folgenden Variablen
 
 ```env
 # API-URL für die Produktionsumgebung
-REACT_APP_API_URL=http://localhost:3001
+REACT_APP_API_URL=<PRODUKTIONS-URL HIER EINTRAGEN>
 
 # API-URL für die Entwicklungsumgebung
 REACT_APP_API_URL_DEV=http://localhost:3001

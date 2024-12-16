@@ -147,14 +147,14 @@
   }
   &__room-preview-name {
     white-space: nowrap;
-    font-size: 0.6em;
+    font-size: 0.65em;
     font-weight: 600;
   }
   &__room-preview-text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 0.45em;
+    font-size: 0.5em;
 
     &--me {
       margin-right: 0.25em;
@@ -167,7 +167,7 @@
   }
   &__room-preview-date {
     white-space: nowrap;
-    font-size: 0.35em;
+    font-size: 0.4em;
     align-self: flex-end;
   }
   &__main {
@@ -203,10 +203,10 @@
     color: var(--color-grey-light-1);
   }
   &__main-header-info-name {
-    font-size: 0.75em;
+    font-size: 0.8em;
   }
   &__main-header-info-user {
-    font-size: 0.5em;
+    font-size: 0.55em;
     display: flex;
     flex-direction: row;
 
@@ -248,7 +248,7 @@
   }
   &__main-body-message {
     max-width: 80%;
-    font-size: 0.4em;
+    font-size: 0.45em;
     margin: 0.25em 0.5em;
     padding: 0.5em 0.75em;
     display: flex;
@@ -304,7 +304,7 @@
     width: max-content;
 
     border-radius: 9px;
-    font-size: 1em;
+    font-size: 1.05em;
     font-weight: 600;
 
     &--me {
@@ -318,7 +318,7 @@
     width: max-content;
     align-self: flex-end;
     padding: 0.25em 0.75em;
-    font-size: 0.75em;
+    font-size: 0.8em;
     border-radius: 9px;
     white-space: nowrap;
     text-align: center;
@@ -328,7 +328,7 @@
     color: var(--color-grey-light-1);
     position: fixed;
     bottom: 5em;
-    font-size: 0.65em;
+    font-size: 0.7em;
     align-self: center;
   }
   &__main-footer {
@@ -346,22 +346,27 @@
     }
   }
   &__main-footer-button {
-    font-size: 0.5em;
+    font-size: 0.55em;
     padding: 0.5em;
     border-radius: 100%;
     height: fit-content;
     box-shadow: var(--shadow-light);
     transition: 0.25s;
+
+    &--hidden {
+      display: none;
+    }
   }
   &__main-footer-textarea {
     height: 100%;
-    font-size: 0.6em;
+    font-size: 0.65em;
     margin: 0 0.5em 0 0.5em;
     padding: 0.5em;
     border-radius: 9px;
     box-shadow: var(--shadow-light);
     color: var(--color-grey-dark-1);
     flex-grow: 1;
+    resize: vertical;
     &:focus {
       box-shadow: var(--shadow-dark);
       outline: none;

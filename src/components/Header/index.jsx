@@ -73,9 +73,9 @@ const Header = ({ loggedIn }) => {
               <li className='nav-main__list-item nav-main__list-item--mobile'>
                 <Link to='/'>Chat</Link>
               </li>
-              <li className='nav-main__list-item nav-main__list-item--mobile'>
+              {/* <li className='nav-main__list-item nav-main__list-item--mobile'>
                 <Link to='/settings'>Settings</Link>
-              </li>
+              </li> */}
               <li className='nav-main__list-item nav-main__list-item--mobile'>
                 <Link to='/logout'>Logout</Link>
               </li>

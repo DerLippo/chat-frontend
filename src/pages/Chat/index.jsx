@@ -40,40 +40,46 @@ const Chat = () => {
       withCredentials: true,
       reconnection: true,
       reconnectionAttempts: Infinity,
-      reconnectionDelay: 1000,
-      reconnectionDelayMax: 5000,
+      reconnectionDelay: 5000,
+      reconnectionDelayMax: 30000,
     });
 
     socketRef.current = socket;
 
     socket.on('connect', () => {
-      console.log('Socket verbunden:', socket.id);
+      // console.log('Socket verbunden:', socket.id);
+      console.log('Socket verbunden');
       setIsConnected(true);
     });
 
     socket.on('disconnect', () => {
-      console.log('Socket getrennt:', socket.id || 'Keine ID verfügbar');
+      // console.log('Socket getrennt:', socket.id || 'Keine ID verfügbar');
+      console.log('Socket getrennt' || 'Keine ID verfügbar');
       setIsConnected(false);
     });
 
     socket.on('connect_error', err => {
-      console.error('WebSocket-Fehler:', err.message);
+      // console.error('WebSocket-Fehler:', err.message);
       if (err.message === 'Authentication error') {
         console.warn(
           'Authentifizierungsfehler. Weiterleitung zur Login-Seite.'
         );
+        Cookies.remove('loggedIn');
+        navigate('/login');
       }
-      Cookies.remove('loggedIn');
-      navigate('/login');
     });
 
     // Cleanup: Trenne Verbindung beim Verlassen
     return () => {
       if (socketRef.current) {
+        // console.log(
+        //   'Socket wird getrennt:',
+        //   socketRef.current.id ||
+        //     'Keine Socket-ID verfügbar (vermutlich bereits getrennt)'
+        // );
         console.log(
-          'Socket wird getrennt:',
-          socketRef.current.id ||
-            'Keine ID verfügbar (vermutlich bereits getrennt)'
+          'Socket wird getrennt' ||
+            'Keine Socket-ID verfügbar (vermutlich bereits getrennt)'
         );
         socketRef.current.disconnect();
         socketRef.current = null; // Setze die Referenz auf null, um spätere Konflikte zu vermeiden
@@ -141,7 +147,7 @@ const Chat = () => {
   useEffect(() => {
     socketRef.current?.emit('findRooms');
     socketRef.current?.on('receiveRooms', data => setRooms(data));
-    socketRef.current?.on('error', data => console.log(data));
+    socketRef.current?.on('error', data => console.log(data)); // To-Do Show Error in UI
     return () => {
       socketRef.current?.off('receiveRooms');
       socketRef.current?.off('error');
@@ -462,7 +468,10 @@ const Chat = () => {
               </div>
             </div>
             <div className='chat__main-footer'>
-              <Button className='chat__main-footer-button' value='🙂' />
+              <Button
+                className='chat__main-footer-button chat__main-footer-button--hidden'
+                value='🙂'
+              />
               <form onSubmit={sendMessage}>
                 <Textarea
                   className='chat__main-footer-textarea'
