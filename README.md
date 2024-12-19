@@ -4,11 +4,16 @@ Dies ist das Frontend der Chat-Anwendung, das mit React entwickelt wurde und die
 
 ## Aktuelle Version
 
-**Version:** `1.1.0`
+**Version:** `1.1.1`
 
 ---
 
 ## Changelog
+
+### 1.1.1
+
+- Regel Outline:none; bei Textarea hinzugefügt (hat vorher nicht richtig funktioniert) &:hover und normalzustand hat gefehlt vorher war es nur &:focus
+- Font Size angepasst im Chat
 
 ### 1.1.0
 

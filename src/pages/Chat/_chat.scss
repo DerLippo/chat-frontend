@@ -37,7 +37,7 @@
   }
 
   &__search {
-    font-size: 0.75em;
+    font-size: 0.8em;
     padding: 0.5em 0.75em 0.5em 0.5em;
     margin: 1em;
     margin-left: 5.5em;
@@ -46,7 +46,7 @@
   }
 
   &__room-create-button {
-    font-size: 0.5em;
+    font-size: 0.55em;
     padding: 0.5em;
     margin: 0.5em;
     width: max-content;
@@ -101,7 +101,7 @@
   }
   &__room-options {
     align-self: flex-end;
-    font-size: 0.75em;
+    font-size: 0.8em;
     transform: rotate(180deg);
     position: absolute;
     color: var(--color-teritary-dark);
@@ -139,7 +139,7 @@
     display: flex;
     margin-bottom: 0.2em;
     button {
-      font-size: 0.5em;
+      font-size: 0.55em;
       padding: 0.25em;
 
       background-color: var(--color-tertiary);
@@ -147,14 +147,14 @@
   }
   &__room-preview-name {
     white-space: nowrap;
-    font-size: 0.65em;
+    font-size: 0.7em;
     font-weight: 600;
   }
   &__room-preview-text {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 0.5em;
+    font-size: 0.55em;
 
     &--me {
       margin-right: 0.25em;
@@ -167,7 +167,7 @@
   }
   &__room-preview-date {
     white-space: nowrap;
-    font-size: 0.4em;
+    font-size: 0.45em;
     align-self: flex-end;
   }
   &__main {
@@ -203,10 +203,10 @@
     color: var(--color-grey-light-1);
   }
   &__main-header-info-name {
-    font-size: 0.8em;
+    font-size: 0.85em;
   }
   &__main-header-info-user {
-    font-size: 0.55em;
+    font-size: 0.6em;
     display: flex;
     flex-direction: row;
 
@@ -248,7 +248,7 @@
   }
   &__main-body-message {
     max-width: 80%;
-    font-size: 0.45em;
+    font-size: 0.5em;
     margin: 0.25em 0.5em;
     padding: 0.5em 0.75em;
     display: flex;
@@ -304,7 +304,7 @@
     width: max-content;
 
     border-radius: 9px;
-    font-size: 1.05em;
+    font-size: 1.1em;
     font-weight: 600;
 
     &--me {
@@ -318,7 +318,7 @@
     width: max-content;
     align-self: flex-end;
     padding: 0.25em 0.75em;
-    font-size: 0.8em;
+    font-size: 0.85em;
     border-radius: 9px;
     white-space: nowrap;
     text-align: center;
@@ -328,7 +328,7 @@
     color: var(--color-grey-light-1);
     position: fixed;
     bottom: 5em;
-    font-size: 0.7em;
+    font-size: 0.75em;
     align-self: center;
   }
   &__main-footer {
@@ -346,7 +346,7 @@
     }
   }
   &__main-footer-button {
-    font-size: 0.55em;
+    font-size: 0.6em;
     padding: 0.5em;
     border-radius: 100%;
     height: fit-content;
@@ -359,7 +359,7 @@
   }
   &__main-footer-textarea {
     height: 100%;
-    font-size: 0.65em;
+    font-size: 0.7em;
     margin: 0 0.5em 0 0.5em;
     padding: 0.5em;
     border-radius: 9px;
@@ -367,7 +367,9 @@
     color: var(--color-grey-dark-1);
     flex-grow: 1;
     resize: vertical;
-    &:focus {
+    outline: none;
+    &:focus,
+    &:hover {
       box-shadow: var(--shadow-dark);
       outline: none;
     }
