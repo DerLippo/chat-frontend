@@ -4,16 +4,26 @@ Dies ist das Frontend der Chat-Anwendung, das mit React entwickelt wurde und die
 
 ## Aktuelle Version
 
-**Version:** `1.1.1`
+**Version:** `1.2.0`
 
 ---
 
 ## Changelog
 
+### **1.2.0**
+
+- **Textarea**:
+  - Das Senden einer Nachricht ist jetzt mit Enter möglich.
+    - Textarea-Komponente mit `onKeyDown` + `onKeyUp` hinzugefügt.
+    - Bei gedrückter Shift-Taste + Enter wird ein Zeilenumbruch erstellt.
+    - Bei Taste Enter wird die Nachricht abgesendet.
+
 ### 1.1.1
 
-- Regel Outline:none; bei Textarea hinzugefügt (hat vorher nicht richtig funktioniert) &:hover und normalzustand hat gefehlt vorher war es nur &:focus
-- Font Size angepasst im Chat
+- **Textarea-Optimierung**:
+  - `outline: none;` wurde korrekt für `&:hover` und den Normalzustand hinzugefügt. Zuvor war es nur für `&:focus` definiert.
+- **Schriftgröße im Chat angepasst**:
+  - Die Schriftgröße wurde für eine bessere Lesbarkeit optimiert.
 
 ### 1.1.0
 
@@ -116,7 +126,10 @@ REACT_APP_API_URL=<PRODUKTIONS-URL HIER EINTRAGEN>
 
 # API-URL für die Entwicklungsumgebung
 REACT_APP_API_URL_DEV=http://localhost:3001
-
-# Umgebung (development oder production)
-NODE_ENV=production
 ```
+
+---
+
+## Lizenz
+
+Dieses Projekt ist unter der [MIT-Lizenz](LICENSE) lizenziert. Details findest du in der Datei `LICENSE` im Repository.

@@ -36,13 +36,18 @@ const Chat = () => {
 
   /* Initialisiere den Socket */
   useEffect(() => {
-    const socket = io(process.env.REACT_APP_API_URL, {
-      withCredentials: true,
-      reconnection: true,
-      reconnectionAttempts: Infinity,
-      reconnectionDelay: 5000,
-      reconnectionDelayMax: 30000,
-    });
+    const socket = io(
+      process.env.NODE_ENV === 'production'
+        ? process.env.REACT_APP_API_URL
+        : process.env.REACT_APP_API_URL_DEV,
+      {
+        withCredentials: true,
+        reconnection: true,
+        reconnectionAttempts: Infinity,
+        reconnectionDelay: 5000,
+        reconnectionDelayMax: 30000,
+      }
+    );
 
     socketRef.current = socket;
 
@@ -120,12 +125,18 @@ const Chat = () => {
   const sendMessage = e => {
     e.preventDefault();
 
-    if (!textMessage.trim() || !roomId) return;
-    socketRef.current?.emit('sendChatMessage', {
-      textMessage,
-      roomId,
-    });
-    setTextMessage('');
+    // Überprüfe ob Enter oder Shift + Enter gedrückt wurde
+    if (e.shiftKey === true && e.key === 'Enter') return;
+
+    // Wenn nur Enter, sende Nachricht
+    if (e.key === 'Enter') {
+      if (!textMessage.trim() || !roomId) return;
+      socketRef.current?.emit('sendChatMessage', {
+        textMessage,
+        roomId,
+      });
+      setTextMessage('');
+    }
   };
 
   /* Suche älteste Nachricht */
@@ -476,7 +487,10 @@ const Chat = () => {
                 <Textarea
                   className='chat__main-footer-textarea'
                   value={textMessage}
-                  onChange={e => setTextMessage(e.target.value)}
+                  onChange={e => {
+                    setTextMessage(e.target.value);
+                  }}
+                  onKeyUp={e => sendMessage(e)}
                 />
                 <Button
                   type='submit'

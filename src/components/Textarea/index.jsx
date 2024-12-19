@@ -1,6 +1,15 @@
 import React from 'react';
 
-const Textarea = ({ id, className, name, placeholder, value, onChange }) => {
+const Textarea = ({
+  id,
+  className,
+  name,
+  placeholder,
+  value,
+  onChange,
+  onKeyDown,
+  onKeyUp,
+}) => {
   return (
     <textarea
       id={id}
@@ -8,6 +17,8 @@ const Textarea = ({ id, className, name, placeholder, value, onChange }) => {
       name={name}
       placeholder={placeholder}
       onChange={onChange}
+      onKeyDown={onKeyDown}
+      onKeyUp={onKeyUp}
       value={value}
     />
   );
