@@ -7,7 +7,6 @@ import './App.scss';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Chat from './pages/Chat';
-import Settings from './pages/Settings';
 import Logout from './pages/Logout';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -54,7 +53,6 @@ function App() {
             <>
               <Route path='*' element={<Chat />}></Route>
               <Route path='/chat' element={<Chat />}></Route>
-              <Route path='/settings' element={<Settings />}></Route>
               <Route path='/logout' element={<Logout />}></Route>
             </>
           )}

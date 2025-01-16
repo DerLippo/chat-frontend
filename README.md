@@ -4,13 +4,24 @@ Dies ist das Frontend der Chat-Anwendung, das mit React entwickelt wurde und die
 
 ## Aktuelle Version
 
-**Version:** `1.3.0`
+**Version:** `1.3.2`
 
 ---
 
 ## Changelog
 
-### **1.3.0**
+### **1.3.2**
+
+- **Link entfernt**
+  - Ein unnötiger Link wurde aus dem Code entfernt, der nicht hätte vorhanden sein dürfen.
+
+### 1.3.1
+
+- **Code Refactoring**
+  - Der Code wurde umfassend überarbeitet, um die Lesbarkeit und Wartbarkeit zu verbessern.
+  - Komponenten wurden besser aufgeteilt und klar voneinander getrennt.
+
+### 1.3.0
 
 - **Title**
   - Der WebTitle ändert sich jetzt dynamisch, abhängig davon was aktuell der Stand ist (ausgeloggt, eingeloggt, neue Nachricht)
