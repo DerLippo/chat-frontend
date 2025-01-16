@@ -4,13 +4,20 @@ Dies ist das Frontend der Chat-Anwendung, das mit React entwickelt wurde und die
 
 ## Aktuelle Version
 
-**Version:** `1.2.0`
+**Version:** `1.3.0`
 
 ---
 
 ## Changelog
 
-### **1.2.0**
+### **1.3.0**
+
+- **Title**
+  - Der WebTitle ändert sich jetzt dynamisch, abhängig davon was aktuell der Stand ist (ausgeloggt, eingeloggt, neue Nachricht)
+- **Nachricht senden**
+  - Ein Fehler wurde gefixed bei dem die Nachricht mittels senden Button nicht abgeschickt wurde
+
+### 1.2.0
 
 - **Textarea**:
   - Das Senden einer Nachricht ist jetzt mit Enter möglich.

@@ -11,14 +11,18 @@ import Settings from './pages/Settings';
 import Logout from './pages/Logout';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import usePageTitleRefresh from './hooks/usePageTitle';
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(!!Cookies.get('loggedIn'));
   const [userName, setUserName] = useState(Cookies.get('userName'));
 
+  // Hooks
   useTokenRefresh();
+  usePageTitleRefresh({ state: !loggedIn ? 'loggedOut' : 'loggedIn' });
 
   // Überwache Änderungen am "loggedIn"-Cookie und "userName"-Cookie
+  // Wenn ausgeloggt -> Ändere Title Tag
   useEffect(() => {
     const interval = setInterval(() => {
       const isLoggedInCookie = !!Cookies.get('loggedIn');
